@@ -1,6 +1,6 @@
 {% set name = "sphinx-releases" %}
-{% set version = "1.4.1" %}
-{% set sha256 = "9406093eebd57e9ae1774bfca1e66e79d0d41051238ae24fa408c43a7201d93e" %}
+{% set version = "1.5.0" %}
+{% set sha256 = "d6e8564209d27cb00677c15420d429f99621477076ae99cfaf433a254c5316bc" %}
 
 package:
   name: {{ name|lower }}
