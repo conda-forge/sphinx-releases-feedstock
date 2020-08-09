@@ -1,6 +1,6 @@
 {% set name = "sphinx-releases" %}
-{% set version = "1.6.1" %}
-{% set sha256 = "fa36ce60b8ce1f60a299bcd9aea75b9d51a3091828827f3ded8788abcd8040c8" %}
+{% set version = "1.6.3" %}
+{% set sha256 = "117d6b9afbbda8d8528ea7ea5275185c2d38f75733837a9f3034ed076f2c9a66" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
