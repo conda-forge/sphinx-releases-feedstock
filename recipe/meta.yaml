@@ -1,29 +1,29 @@
 {% set name = "sphinx-releases" %}
-{% set version = "1.6.1" %}
-{% set sha256 = "fa36ce60b8ce1f60a299bcd9aea75b9d51a3091828827f3ded8788abcd8040c8" %}
+{% set pypi_name = "releases" %}
+{% set version = "1.6.3" %}
+{% set sha256 = "555ae4c97a671a420281c1c782e9236be25157b449fdf20b4c4b293fe93db2f1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/bitprophet/releases/archive/{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
-    - semantic_version
-    - sphinx
+    - python >=3.6
+    - semantic_version <2.7
+    - sphinx >=1.8
 
 test:
   imports:
@@ -31,7 +31,7 @@ test:
 
 about:
   home: https://github.com/bitprophet/releases
-  license: BSD 2-Clause
+  license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
   summary: A powerful Sphinx changelog-generating extension
