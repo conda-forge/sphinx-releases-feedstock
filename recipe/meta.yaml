@@ -22,8 +22,8 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - semantic_version
-    - sphinx
+    - semantic_version <2.7
+    - sphinx >=1.8
 
 test:
   imports:
